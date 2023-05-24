@@ -1,4 +1,4 @@
-# MultilingualPerspectivistNLU
+# Multilingual Perspectivist NLU
 
 In this repository, we publish various results (linguistic resources, models, and codes) related to make _perspectivist_ the technologies of Natural Language Understanding.
 
