@@ -4,5 +4,5 @@ In this repository, we publish various results (linguistic resources, models, an
 
 For more information about the theoretical framework and available works on **perspectivism** see the manifesto page: https://pdai.info/ 
 
-# Update
+# Updates
 The EPICorpus is avalaible also on HuggingFace: https://huggingface.co/datasets/Multilingual-Perspectivist-NLU/EPIC 
