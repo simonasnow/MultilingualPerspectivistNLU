@@ -6,3 +6,4 @@ For more information about the theoretical framework and available works on **pe
 
 # Updates
 The EPICorpus is avalaible also on HuggingFace: https://huggingface.co/datasets/Multilingual-Perspectivist-NLU/EPIC 
+Released models are available on HuggingFace: https://huggingface.co/Multilingual-Perspectivist-NLU/aggregatedModel 
