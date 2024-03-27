@@ -27,3 +27,24 @@ config = {
     "seed_experiment_list" : [10,11,12,13,14,15,16,17,18,19],
     'llm_list': ['bert-base-uncased', 'distilbert-base-uncased', 'roberta-base'],
 }
+
+clustering_config = {
+    "files_dir": "./clustering_files/",
+    "methods": ["Krippendorff", "KPCA"],
+    "traits": ["cluster"],
+
+    "Krippendorff_distance_threshold": 6.5,
+    "KPCA_distance_threshold": 2.25,
+    "linkage_method": "ward",
+
+    "n_components": 60,
+    "n_labels": 2,  # iro, not
+
+    "krippendorff_nationality":6.5,
+    "krippendorff_gender":8.5,
+    "krippendorff_generation":7.2,
+
+    "kpca_nationality": 2.2,
+    "kpca_gender": 2.6,
+    "kpca_generation": 2.25
+}
