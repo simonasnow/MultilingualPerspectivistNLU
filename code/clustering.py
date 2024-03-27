@@ -13,9 +13,6 @@ from config import config, clustering_config
 from utils.hierarchical_clustering import agglomerative_clustering, plot_dendrogram
 from utils.split_data import split_datasets
 from utils.data_clustering import generate_df
-# from utils.split_data import make_training_sets
-#
-# from utils.remove_GoldSet_test import remove_GoldSet_test
 
 import warnings
 from scipy.cluster.hierarchy import ClusterWarning
@@ -34,7 +31,9 @@ df_label_matrix = df_annotator_representation.pivot_table(index='id_annotator', 
 label_matrix = df_label_matrix.to_numpy(na_value=np.nan, dtype='float')
 
 list_annotators = df_label_matrix.index.tolist()
-
+list_annotators = df_label_matrix.index.tolist()
+with open(os.path.join(f"{clustering_config['files_dir']}", "list_annotators.pickle"), "wb") as handle:
+    pickle.dump(list_annotators, handle, protocol=pickle.HIGHEST_PROTOCOL)
 
 # matrix one-hot encoded
 n_labels = clustering_config["n_labels"]
@@ -80,14 +79,14 @@ for i in tqdm(range(0, len(label_matrix))):
 
 similarity_matrix_krippendorff = np.nan_to_num(similarity_matrix_krippendorff, copy=True, nan=1, posinf=None, neginf=None)
 distance_matrix_krippendorff = np.subtract(1, similarity_matrix_krippendorff)
-
+np.save(os.path.join(f"{clustering_config['files_dir']}", "distance_matrix_krippendorff"), distance_matrix_krippendorff)
 
 # distance matrix kpca
 n_components = clustering_config["n_components"]
 kpca = KernelPCA(n_components=n_components, kernel='cosine')
 kpca_annotator_representation = kpca.fit_transform(matrix_one_hot)
 distance_matrix_kpca = sklearn.metrics.pairwise_distances(kpca_annotator_representation, metric='euclidean')
-
+np.save(os.path.join(f"{clustering_config['files_dir']}", "distance_matrix_kpca"), distance_matrix_kpca)
 
 #hierarchical clustering
 model_agglomerative_krippendorff = agglomerative_clustering(clustering_config["linkage_method"], clustering_config["Krippendorff_distance_threshold"], distance_matrix_krippendorff)
