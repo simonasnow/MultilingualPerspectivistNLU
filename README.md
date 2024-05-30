@@ -8,7 +8,7 @@ For more information about the theoretical framework and available works on **pe
 - The EPICorpus (Frenda et al. 2023) is avalaible on HuggingFace: https://huggingface.co/datasets/Multilingual-Perspectivist-NLU/EPIC 
 - Released models are available on HuggingFace: https://huggingface.co/Multilingual-Perspectivist-NLU/aggregatedModel 
 - The MultiPICorpus (Casola, Frenda, Lo et al. 2024) is available on HuggingFace: https://huggingface.co/datasets/Multilingual-Perspectivist-NLU/MultiPICo
-- The folder code contains the scripts used for experiments published in Casola et al. (2023) at EMNLP 2023
+- The folder code contains the scripts used for the experiments published in Casola et al. (2023) at EMNLP 2023
 
 # Publications
 ```
